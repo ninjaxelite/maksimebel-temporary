@@ -1,0 +1,17 @@
+<div class="img-container">
+  <img #m src="{{imgFolderPath}}{{imgSrc}}" />
+  <div class="text-left">
+    <div class="img-text">
+      {{selltextTop}}
+    </div>
+    <div class="img-text">
+      {{selltextBottom}}
+    </div>
+  </div>
+    <div class="centered-right">
+      <a class="fa fa-chevron-right nav-link" href="#" (click)="navigate(2)"></a>
+    </div>
+    <div class="centered-left">
+      <a class="fa fa-chevron-left nav-link" href="#" (click)="navigate(1)"></a>
+    </div>
+</div>

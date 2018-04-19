@@ -1,0 +1,31 @@
+.p-text {
+    font-family: MaisonNeue-Book, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 2.5rem;
+    letter-spacing: 0.056rem;
+    color: #373737;
+
+    .row {
+        margin-left: 25px;
+        margin-right: 30px;
+        
+        .p-name {
+            margin-right: auto;
+        }
+        .mass {
+            font-size: 12px;
+            margin-right: auto;
+        }
+        .d-name {
+            color: #c0b283;
+            border-bottom: 1px solid #c0b283;
+            text-transform: uppercase;
+            line-height: 1.5rem;
+            font-weight: 600;
+        }
+        .text-deko {
+            margin-top: 18px;
+            line-height: 30px;
+        }
+    }
+}

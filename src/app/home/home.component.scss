@@ -1,0 +1,55 @@
+.crop-height {
+    height: 590px;
+    overflow: hidden; 
+
+    img {
+         display: block; 
+         width: 100%;
+        // max-width: 100%;
+        // height: auto !important;
+        position: relative;
+  top: 28%;
+  transform: translateY(-50%);
+    }
+}
+
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    
+    /* Centered text */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .centered-left {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translate(-50%, -5%);
+    }
+    .centered-right {
+        position: absolute;
+        top: 50%;
+        left: 95%;
+        transform: translate(-50%, -95%);
+    }
+
+    .nav-link {
+        color: #fff;
+        font-size: 45px;
+    }
+}
+
+.part-header {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #565656;
+}

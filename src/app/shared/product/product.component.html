@@ -1,0 +1,25 @@
+<div class="p-text">
+  <img width="{{imgWidth}}" src="{{articleImg}}" />
+  <div *ngIf="showDetails">
+    <div class="row">
+      <div class="p-name">Kleiderschrank</div>
+      <div>900 €</div>
+    </div>
+    <div class="row">
+      <div class="mass">B: 150 cm, H: 233 cm, T: 62 cm</div>
+      <div>
+        <a class="fa fa-heart-o nav-link" href="#"></a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showDescription">
+    <div class="row">
+      <div class="d-name mt-3">{{descTitel}}</div>
+    </div>
+    <div class="row">
+      <span class="text-deko">
+          Mach es dir bequem und gestalte dein individuelles Sofa ganz einfach selbst – ohne Kompromisse.
+      </span>
+    </div>
+  </div>
+</div>
