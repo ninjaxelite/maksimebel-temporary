@@ -31,41 +31,42 @@
 </div>-->
 
 <div class="menu">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand mr-5" href="#">Arsaev Corp.</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mr-5" href="#">Arsaev Corp.</a>
+    <button class="navbar-toggler" type="button" (click)="toggleDropdown(drMenu)" data-toggle="collapse" data-target="#navbarToggler" 
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Eigen Design
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item" (click)="toggleMenu()">
-        <a class="nav-link" href="#">Produkte</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Inspiration</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Über Company</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Showroom</a>
-      </li>
-    </ul>
-    <a class="fa fa-heart-o nav-link" href="#"></a>
-  </div>
-</nav>
+    <div class="collapse navbar-collapse" #drMenu id="navbarToggler">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Eigen Design
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item" (click)="toggleMenu()">
+          <a class="nav-link" href="#">Produkte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inspiration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Über Company</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Showroom</a>
+        </li>
+      </ul>
+      <a class="fa fa-heart-o nav-link" href="#"></a>
+    </div>
+  </nav>
 </div>
 <div [@slideInOut]="menuState" class="dropdown-bar">
   <div class="container">
     <div class="col-12">
       <div class="row">
-        <div class="col-2 mr-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 mr-4">
           <ul class="dr-list">
             <li class="dropdown-item">
               <span>Regale</span>
@@ -75,7 +76,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-2 mr-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 mr-4">
           <ul class="dr-list">
             <li class="dropdown-item">
               <span>Schränke</span>
@@ -85,7 +86,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-2 mr-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 mr-4">
           <ul class="dr-list">
             <li class="dropdown-item">
               <span>Sofas & Sessel</span>
@@ -95,7 +96,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-2 mr-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 mr-5">
           <ul class="dr-list">
             <li class="dropdown-item">
               <span>Tische</span>
@@ -105,7 +106,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-2 ml-4">
+        <div class="col-lg-2 col-md-3 col-sm-4">
           <ul class="dr-list">
             <li class="dropdown-item">
               <span>Stühle</span>

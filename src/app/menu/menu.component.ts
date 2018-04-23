@@ -48,4 +48,7 @@ export class MenuComponent implements OnInit {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
 
+  toggleDropdown(drMenu: HTMLDivElement) {
+    drMenu.classList.contains('show') ? drMenu.classList.remove('show') :  drMenu.classList.add('show'); 
+  }
 }

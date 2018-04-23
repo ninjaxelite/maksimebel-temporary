@@ -1,11 +1,15 @@
 .navbar {
-    display: table; margin: 0 auto;
+    display: flex !important;
     box-shadow: none;
     padding-top: 16px;
     padding-bottom: 16px;
 
     .navbar-brand {
         color: #000;
+    }
+
+    @media (max-width: 750px) {
+        
     }
 }
 
@@ -16,6 +20,13 @@
         font-size: 0.9rem;
         font-weight: 600;
         color: #000;
+    }
+}
+
+.navbar-collapse {
+    @media (min-width: 1000px) {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -52,6 +63,8 @@
     width: 100%;
     background-color: white;
     z-index: 9999;
+
+    
 }
 
 .dropdown-bar {
