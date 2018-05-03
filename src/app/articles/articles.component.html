@@ -1,0 +1,19 @@
+<div class="col-12">
+  <div class="row">
+    <app-presentation imgFolderPath="{{imgFolder}}"></app-presentation>
+  </div>
+</div>
+<div class="container mt-4 filter">
+  <div class="row justify-content-center">
+    <span class="ml-2 mr-2">Alle (8)</span>
+    <span class="ml-2 mr-2">Neue (3)</span>
+    <span class="ml-2 mr-2">Designer (5)</span>
+  </div>
+</div>
+<div class="container mt-4">
+  <div class="row">
+    <div *ngFor="let item of items" class="col-12 col-lg-3 col-md-4 col-sm-6 mb-4">
+      <app-product showDetails="true" articleImg="{{ item.name }}"></app-product>
+    </div>
+  </div>
+</div>

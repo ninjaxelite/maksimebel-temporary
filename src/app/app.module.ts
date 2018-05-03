@@ -15,6 +15,9 @@ import { TextbarComponent } from './shared/textbar/textbar.component';
 import { ProductComponent } from './shared/product/product.component';
 import { ProductsComponent } from './products/products.component';
 
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { ArticlesComponent } from './articles/articles.component';
+
 export const API_URL: String = "http://localhost:8080/";
 
 @NgModule({
@@ -25,7 +28,8 @@ export const API_URL: String = "http://localhost:8080/";
     PresentationComponent,
     TextbarComponent,
     ProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ export const API_URL: String = "http://localhost:8080/";
     MDBBootstrapModule.forRoot(),
     NgbModule.forRoot(),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2CarouselamosModule
   ],
   providers: [PresentationService],
   bootstrap: [AppComponent],

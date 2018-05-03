@@ -22,7 +22,13 @@
         font-size: 35px;
         text-shadow: 2px 2px #1b1b1b;
         padding: 0 !important;
+        
+        @media (max-width: 750px) {
+            font-size: 20px;
+        }
     }
+
+    
 }
 
 

@@ -33,10 +33,13 @@
 <div class="menu">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand mr-5" href="#">Arsaev Corp.</a>
-    <button class="navbar-toggler" type="button" (click)="toggleDropdown(drMenu)" data-toggle="collapse" data-target="#navbarToggler" 
-      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div>
+      <a class="fa fa-heart-o nav-link favourite-collapse" href="#"></a>
+      <button class="navbar-toggler" type="button" (click)="toggleDropdown(drMenu)" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
     <div class="collapse navbar-collapse" #drMenu id="navbarToggler">
       <ul class="navbar-nav">
@@ -58,7 +61,7 @@
           <a class="nav-link" href="#">Showroom</a>
         </li>
       </ul>
-      <a class="fa fa-heart-o nav-link" href="#"></a>
+      <a class="fa fa-heart-o nav-link favourite" href="#"></a>
     </div>
   </nav>
 </div>
