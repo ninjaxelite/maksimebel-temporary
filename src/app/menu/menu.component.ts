@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
@@ -15,19 +15,21 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         transform: 'translate3d(0, -100%, 0)',
         top: '-100px'
       })),
-      transition('in => out', animate('400ms ease-in-out')),
+      transition('in => out', animate('300ms ease-in-out')),
       transition('out => in', animate('400ms ease-in-out'))
     ]),
   ]
 })
 export class MenuComponent implements OnInit {
 
+  @ViewChild('products') mProducts: ElementRef;
+
   menuState: String = 'out';
   drRegale: String[] = ['Bücherregale', 'Aktenregale', 'Schallplattenregale', 'Bibliothek'];
   drSchraenke: String[] = ['Kleiderschränke', 'Sideboards', 'Highboards', 'Kommoden',
     'Buffetschränke', 'Lowboards', 'Wohnwände', 'Aktenschränke', 'Rollcontainer'];
   drSofSess: String[] = ['Sofas', 'Ecksofas', 'Schlafsofas', 'Sessel'];
-  drTische: String[] = ['Esstische', 'Schreibtische', 'Couch- & Beistelltische', 'Konsolentische'];
+  drTische: String[] = ['Esstische', 'Schreibtische', 'Couch & Tische', 'Konsolentische'];
   drStuehle: String[] = ['Esszimmerstühle', 'Holzstühle', 'Armlehnstühle', 'Barhocker'];
 
   @HostListener('document:click', ['$event'])
@@ -37,6 +39,7 @@ export class MenuComponent implements OnInit {
     } else {
       // clicked outside
       this.menuState = 'out';
+      this.mProducts.nativeElement.classList.remove('active');
     }
   }
   constructor(private eRef: ElementRef) { }
@@ -44,8 +47,15 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleMenu() {
-    this.menuState = this.menuState === 'out' ? 'in' : 'out';
+  toggleMenu(link) {
+    setTimeout(() => this.menuState = this.menuState === 'out' ? 'in' : 'out', 300);
+    switch(link) {
+      case 'products': 
+        this.mProducts.nativeElement.classList.contains('active') ? 
+          this.mProducts.nativeElement.classList.remove('active') : this.mProducts.nativeElement.classList.add('active');
+        break;
+      default: link ? window.location.href = link: '';
+    }
   }
 
   toggleDropdown(drMenu: HTMLDivElement) {

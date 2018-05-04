@@ -14,6 +14,7 @@
 }
 
 .navbar-nav {
+    margin-bottom: 1px;
     a {
         font-family: MaisonNeue-Demi,Helvetica Neue,Helvetica,Arial,sans-serif;
         letter-spacing: .15rem;
@@ -28,6 +29,14 @@
 
     li:last-child {
         margin-right: 5px;
+    }
+
+    .active {
+        .nav-link {
+            background-color: transparent;
+        }
+        border-bottom: 1px solid #000;  
+        margin-bottom: 0px;
     }
 }
 
@@ -105,6 +114,12 @@
     width: 100%;
     z-index: 999;
 
+    .dropdown-item {
+        &:active {
+            color: #000;
+        }
+    }
+
     .dr-list {
         margin-top: 50px;
         margin-bottom: 50px;
@@ -123,15 +138,14 @@
         }
 
         li {
+            width: max-content;
             font-size: 0.8rem;
-            &:hover {
-                cursor: pointer;
+                background-color: transparent;
+            &:hover:not(:nth-child(1)) {
                 span {
+                    cursor: pointer;
                     border-bottom: 1px solid #000;
                 }
-            }
-            &:active {
-                background-color: none;
             }
         }
     }
