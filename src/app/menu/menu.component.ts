@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PresentationService } from '../presentation/presentation.service';
 
 
 @Component({
@@ -42,7 +44,8 @@ export class MenuComponent implements OnInit {
       this.mProducts.nativeElement.classList.remove('active');
     }
   }
-  constructor(private eRef: ElementRef) { }
+  constructor(private eRef: ElementRef, private router: Router, private activatedRoute: ActivatedRoute,
+                private presentService: PresentationService) { }
 
   ngOnInit() {
   }
@@ -54,11 +57,20 @@ export class MenuComponent implements OnInit {
         this.mProducts.nativeElement.classList.contains('active') ? 
           this.mProducts.nativeElement.classList.remove('active') : this.mProducts.nativeElement.classList.add('active');
         break;
-      default: link ? window.location.href = link: '';
+      default: 
+        if(link) {
+          this.presentService.showBlurEffect();
+          this.router.navigate([link], {relativeTo: this.activatedRoute})
+        }
     }
   }
 
   toggleDropdown(drMenu: HTMLDivElement) {
     drMenu.classList.contains('show') ? drMenu.classList.remove('show') :  drMenu.classList.add('show'); 
+  }
+  homeScreen() {
+    this.presentService.showBlurEffect();
+    setTimeout(() => this.menuState = 'out', 200);
+    setTimeout(() => this.presentService.hideBlurEffect(), 300);
   }
 }

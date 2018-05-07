@@ -1,6 +1,7 @@
 import {PresentationService} from '../presentation/presentation.service';
 import {Image} from '../presentation/image';
 import { Component, OnInit } from '@angular/core';
+import { NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
@@ -9,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesComponent implements OnInit {
 
+  id: number;
+  url: string;
   imgFolder: String = './assets/articles/sofas/';
   images: Array<Image> = [];
   items: Array<any>;
@@ -32,6 +35,7 @@ export class ArticlesComponent implements OnInit {
     ];
 
     this.presentService.setImages(this.images); 
-  }
 
+    this.presentService.hideBlurEffect();
+  }
 }
