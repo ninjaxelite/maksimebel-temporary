@@ -54,7 +54,7 @@ export class MenuComponent implements OnInit {
         this.mProducts.nativeElement.classList.contains('active') ? 
           this.mProducts.nativeElement.classList.remove('active') : this.mProducts.nativeElement.classList.add('active');
         break;
-      default: link ? window.location.href = link: '';
+      default: link ? window.location.href = link : ''; // routerLink
     }
   }
 
