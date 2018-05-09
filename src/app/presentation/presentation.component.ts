@@ -19,11 +19,17 @@ export class PresentationComponent implements OnInit {
   selltextBottom: String;
   ind = 0;
 
-  constructor(private presentService: PresentationService) { }
+  constructor(private presentService: PresentationService) {
+    
+  }
 
   ngOnInit() {
     this.images = this.presentService.getImages();
     this.imgSrc = this.getImage(this.ind);
+    
+    this.presentService.getBlurEffectObservable().subscribe(be => {
+      be ? this.img.nativeElement.classList.add('blur-effect') : this.img.nativeElement.classList.remove('blur-effect');
+    });
   }
 
   navigate(v) {
